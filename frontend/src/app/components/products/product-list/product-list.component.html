@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="text-end mb-3">
+    <button class="btn btn-primary" routerLink="/products/add">Add</button>
+  </div>
+  <div class="card mb-3" *ngFor="let product of products">
+    <div class="row">
+      <div class="col-md-3">
+        <img class="card-img" [src]="product.image" [alt]="product.name">
+      </div>
+      <div class="col-md-9">
+        <div class="card-body  h-100 d-flex flex-column">
+          <h5 class="card-title" role="button" (click)="getProductDetails(product)">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <div class="mt-auto">
+            <p class="card-text text-end fst-italic"><small class="text-muted">Updated on: {{product.update_time |
+                date}}</small></p>
+            <div class="d-flex justify-content-between">
+              <div>
+                {{product.price | currency:'INR'}}
+              </div>
+              <div>
+                <a class="btn btn-secondary me-2" (click)="modifyProduct(product)">Modify</a>
+                <a class="btn btn-danger ms-2" (click)="deleteProductHandler(product._id)">Delete</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <ngb-pagination class="d-flex justify-content-center" [collectionSize]="pagination.collectionSize"
+    [(page)]="pagination.page" [maxSize]="10" [rotate]="true" [boundaryLinks]="true" (pageChange)="getProducts()">
+  </ngb-pagination>
+  <app-toasts aria-live="polite" aria-atomic="true"></app-toasts>
+</div>

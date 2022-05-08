@@ -1,0 +1,12 @@
+.product-card{
+    margin: 15px 0;
+}
+.product-card .card-body{
+    background-color: aliceblue;
+}
+.red-border{
+    border: 3px solid red;
+}
+.toast{
+    z-index: 1100;
+}

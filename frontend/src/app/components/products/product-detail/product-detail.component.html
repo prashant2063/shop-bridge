@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="form-box">
+        <div class="row mb-3">
+            <div class="col-md-4 fw-bold">
+                Product Name
+            </div>
+            <div class="col-md-8">
+                {{product.name}}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4 fw-bold">
+                Product Description
+            </div>
+            <div class="col-md-8">
+                {{product.description}}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4 fw-bold">
+                Price
+            </div>
+            <div class="col-md-8">
+                {{product.price | currency:'INR'}}
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4 fw-bold">
+                Updated On
+            </div>
+            <div class="col-md-8">
+                {{product.update_time | date}}
+            </div>
+        </div>
+        <div>
+            <a class="btn btn-secondary me-2" (click)="modifyProduct(product)">Modify</a>
+            <a class="btn btn-danger ms-2" (click)="deleteProductHandler(product._id)">Delete</a>
+          </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+.form-box{
+    width: 50%;
+    position: relative;
+    left: 25%;
+    background-color: rgb(195, 212, 226);
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
